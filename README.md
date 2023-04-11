@@ -2,6 +2,8 @@
 
 Install Argo CD on k3s server with following commands
 
+Ref: https://argo-cd.readthedocs.io/en/stable/getting_started/
+
 ## Install
 
 ```bash
