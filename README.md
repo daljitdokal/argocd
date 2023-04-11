@@ -25,3 +25,12 @@ ssh -L 8002:127.0.0.1:xxxxx xxxxx@xxx.xxx.xxx.xxx -p xx
 ```
 
 The API server can then be accessed using https://127.0.0.1:8002
+
+## Get apssword and Login to UI
+
+```sh
+# Username = admin
+
+# Password
+echo $(sudo kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" -n argocd | base64 --decode)
+```
