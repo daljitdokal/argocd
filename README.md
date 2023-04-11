@@ -1,6 +1,6 @@
 # Install Argo CD
 
-Install Argo CD on k3s server with folling commands
+Install Argo CD on k3s server with following commands
 
 ## Install
 
@@ -16,8 +16,10 @@ sudo kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-
 sudo kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}'
 
 // local
-sudo kubectl port-forward svc/argocd-server -n argocd 8080:443
+sudo kubectl port-forward svc/argocd-server -n argocd xxxx:xxx
 
 // Remote
 ssh -L 8002:127.0.0.1:xxxxx xxxxx@xxx.xxx.xxx.xxx -p xx
 ```
+
+The API server can then be accessed using https://127.0.0.1:8002
