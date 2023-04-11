@@ -29,8 +29,9 @@ The API server can then be accessed using https://127.0.0.1:8002
 ## Get apssword and Login to UI
 
 ```sh
-# Username = admin
+# URL: https://127.0.0.1:8002
+# Username: admin
 
-# Password
+# Password: 
 echo $(sudo kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" -n argocd | base64 --decode)
 ```
