@@ -4,6 +4,8 @@ Install Argo CD on k3s server with following commands
 
 Ref: https://argo-cd.readthedocs.io/en/stable/getting_started/
 
+Free course: https://en.git.ir/linkedin-kubernetes-gitops-with-argocd/
+
 ## Install
 
 ```bash
