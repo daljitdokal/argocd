@@ -2,9 +2,12 @@
 
 Install Argo CD on k3s server with following commands
 
-Ref: https://argo-cd.readthedocs.io/en/stable/getting_started/
+Ref: 
+ - https://argo-cd.readthedocs.io/en/stable/getting_started/
+ - https://argoproj.github.io/
 
-Free course: https://en.git.ir/linkedin-kubernetes-gitops-with-argocd/
+Free course
+- https://en.git.ir/linkedin-kubernetes-gitops-with-argocd/
 
 ## Install
 
@@ -37,3 +40,15 @@ The API server can then be accessed using https://127.0.0.1:8002
 # Password: 
 echo $(sudo kubectl get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" -n argocd | base64 --decode)
 ```
+
+## Argo Events
+
+Event-Based Dependency Manager for Kubernetes: https://www.youtube.com/watch?v=sUPkGChvD54&ab_channel=DevOpsToolkit
+
+## Argo Workflows and Pipelines
+
+CI/CD, Machine Learning, and Other Kubernetes Workflows: https://www.youtube.com/watch?v=UMaivwrAyTA&ab_channel=DevOpsToolkit
+
+# Argo Rollouts
+
+Canary Deployments Made Easy In Kubernetes: https://www.youtube.com/watch?v=84Ky0aPbHvY&ab_channel=DevOpsToolkit
