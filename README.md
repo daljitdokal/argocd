@@ -83,7 +83,7 @@ Argo CD will not replace your Jenkins, Gitlab pipleines, GitHub Actions or or an
 
 ### Development Status
 
-Argo CD is being actively developed by the community. Our releases can be found (here)[https://github.com/argoproj/argo-cd/releases].
+Argo CD is being actively developed by the community. Our releases can be found [here](https://github.com/argoproj/argo-cd/releases).
 
 ### Security Considerations
 
