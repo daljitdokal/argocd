@@ -52,6 +52,8 @@ At a high level, the Argo CD process works like this:
 - **Separating Source Code and Configuration Repositories:**
 
   It is best to use separate Git repositories for Kubernetes manifests and application source code. Maintaining separation between source code and config repos makes them more manageable, enabling modification of one without affecting the other. Another reason to keep repos separate is to maintain cleaner logs for auditing purposes. Separate repos help reduce the noise from regular development activity and make it easier to trace the Git history. 
+  
+  [!image](https://codefresh.io/wp-content/uploads/2022/03/word-image-20220330-174003.png)
 
 - **Suitable Number of Deployment Configuration Repositories:**
 
