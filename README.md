@@ -15,13 +15,25 @@ Ref: https://blog.argoproj.io/cncf-argo-project-2022-user-survey-results-f9caf46
 
 Argo CD isn’t just used by Intuit,it is also trusted by various enterprises across all verticals. Companies like Adobe, Blackrock, Capital One, Google, IBM, Red Hat, and many others have used and contributed to Argo CD and the Argo Project.
 
+**Organizations who have officially adopted Argo CD can be found (here)[https://github.com/argoproj/argo-cd/blob/master/USERS.md].**
 
 ## What Is Argo CD?
 
-Argo CD is a Kubernetes-native continuous deployment (CD) tool. Unlike external CD tools that only enable push-based deployments, Argo CD can pull updated code from Git repositories and deploy it directly to Kubernetes resources. It enables developers to manage both infrastructure configuration and application updates in one system.
+Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. Argo CD can pull updated code from Git repositories and deploy it directly to Kubernetes resources. It enables developers to manage both infrastructure configuration and application updates in one system.
 
+### How it works
 
-## Argo CD offers the following key features and capabilities:
+Argo CD follows the GitOps pattern of using Git repositories as the source of truth for defining the desired application state. Kubernetes manifests can be specified in several ways:
+
+- kustomize applications
+- helm charts
+- jsonnet files
+- Plain directory of YAML/json manifests
+- Any custom config management tool configured as a config management plugin
+
+Argo CD automates the deployment of the desired application states in the specified target environments. 
+
+### Argo CD offers the following key features and capabilities:
 
 - Manual or automatic deployment of applications to a Kubernetes cluster.
 - Automatic synchronization of application state to the current version of declarative configuration.
@@ -79,7 +91,6 @@ Testing changes before pushing them to a manifest helps prevent the introduction
 **Note:** Argo CD will not replace your Jenkins, Gitlab pipleines, GitHub Actions or or any other job execution system. Argo CD can’t lint, can’t build, can’t run tests. Argo CD is GitOps tool that only used for Continuous Delivery/Deployment.
 
 
-Other Products:
+### Development Status
 
-What’s next for ArgoCD?
-
+Argo CD is being actively developed by the community. Our releases can be found (here)[https://github.com/argoproj/argo-cd/releases].
