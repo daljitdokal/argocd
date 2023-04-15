@@ -41,7 +41,6 @@ Argo CD automates the deployment of the desired application states in the specif
 - Single sign-on (SSO) with providers such as GitLab, GitHub, Microsoft, OAuth2, OIDC, LinkedIn, LDAP, and SAML 2.0
 - Support for webhooks triggering actions in GitLab, GitHub, and BitBucket.
 
-
 ## GitOps with Argo CD
 
 GitOps is a software engineering practice that uses a Git repository as its single source of truth. A basic part of the GitOps process is a pull request. New versions of a configuration are introduced via pull request, merged with the main branch in the Git repository, and then the new version is automatically deployed. The Git repository contains a full record of all changes, including all details of the environment at every stage of the process.
@@ -86,9 +85,16 @@ Testing changes before pushing them to a manifest helps prevent the introduction
 - Argo CD applies the code from the my-application-config repo to the cluster (after Pull Request to the config repo is merged, in case you can’t have continuous deployment).
 
 
-**Note:** Argo CD will not replace your Jenkins, Gitlab pipleines, GitHub Actions or or any other job execution system. Argo CD can’t lint, can’t build, can’t run tests. Argo CD is GitOps tool that only used for Continuous Delivery/Deployment.
+## Note 
 
+Argo CD will not replace your Jenkins, Gitlab pipleines, GitHub Actions or or any other job execution system. Argo CD can’t lint, can’t build, can’t run tests. Argo CD is GitOps tool that only used for Continuous Delivery/Deployment.
 
 ### Development Status
 
 Argo CD is being actively developed by the community. Our releases can be found (here)[https://github.com/argoproj/argo-cd/releases].
+
+### Security Considerations
+
+- [Security](https://argo-cd.readthedocs.io/en/stable/operator-manual/security/)
+- [Overview of past and current CVE issues](https://argo-cd.readthedocs.io/en/stable/security_considerations/)
+- [Security Advisories](https://github.com/argoproj/argo-cd/security/advisories)
