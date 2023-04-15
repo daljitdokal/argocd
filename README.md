@@ -49,17 +49,19 @@ At a high level, the Argo CD process works like this:
 
 ## Argo CD Best Practices
 
-- **Separating Source Code and Configuration Repositories:** It is best to use separate Git repositories for Kubernetes manifests and application source code. Maintaining separation between source code and config repos makes them more manageable, enabling modification of one without affecting the other. Another reason to keep repos separate is to maintain cleaner logs for auditing purposes. Separate repos help reduce the noise from regular development activity and make it easier to trace the Git history. 
+- **Separating Source Code and Configuration Repositories:**
+
+  It is best to use separate Git repositories for Kubernetes manifests and application source code. Maintaining separation between source code and config repos makes them more manageable, enabling modification of one without affecting the other. Another reason to keep repos separate is to maintain cleaner logs for auditing purposes. Separate repos help reduce the noise from regular development activity and make it easier to trace the Git history. 
 
 - **Suitable Number of Deployment Configuration Repositories:**
 
- It is important to consider how many repos should house an organization’s deployment configurations.
+  It is important to consider how many repos should house an organization’s deployment configurations.
  
   - Generally, small companies that don’t rely heavily on automation, and where all employees are trusted, can use a mono-repo. 
   - Mid-sized companies that use some automation should use a repository for each team.
   - Larger organizations that require greater control and rely significantly on automation should use repositories for each service.
   
- Teams can often manage themselves if they have their own repository. Each team can decide who has release access, so there is no need for a central team that gives write access to each team, which may create a release bottleneck.
+   Teams can often manage themselves if they have their own repository. Each team can decide who has release access, so there is no need for a central team that gives write access to each team, which may create a release bottleneck.
 
 - **Testing Manifests Before Each Commit:**
 
