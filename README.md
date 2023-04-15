@@ -9,13 +9,11 @@ Developers already use Git for the source code of the application – GitOps ext
 
 ## Trusted by Enterprise Companies
 
-Selecting the right tool for your organization is an important step in this planning. One of the most popular GitOps tools you’ll find in your searches is Argo CD. The 2021 CNCF annual survey reported on the 115% year-on-year increase in Argo CD’s in-production use. The increase in popularity of Argo CD means that it comes up a lot when organizations are discussing the adoption of GitOps.
+Selecting the right tool for your organization is an important step in this planning. One of the most popular GitOps tools you’ll find in your searches is Argo CD. The [2021 CNCF annual survey reported on the 115% year-on-year increase](https://blog.argoproj.io/cncf-argo-project-2022-user-survey-results-f9caf46df7fd) in Argo CD’s in-production use. The increase in popularity of Argo CD means that it comes up a lot when organizations are discussing the adoption of GitOps.
 
-Ref: https://blog.argoproj.io/cncf-argo-project-2022-user-survey-results-f9caf46df7fd
+Argo CD is also trusted by various enterprises across all verticals. Companies like Adobe, Blackrock, Capital One, Google, IBM, Red Hat, and many others have used and contributed to Argo CD and the Argo Project.
 
-Argo CD isn’t just used by Intuit,it is also trusted by various enterprises across all verticals. Companies like Adobe, Blackrock, Capital One, Google, IBM, Red Hat, and many others have used and contributed to Argo CD and the Argo Project.
-
-**Organizations who have officially adopted Argo CD can be found (here)[https://github.com/argoproj/argo-cd/blob/master/USERS.md].**
+**Organizations who have officially adopted Argo CD can be found [here](https://github.com/argoproj/argo-cd/blob/master/USERS.md).**
 
 ## What Is Argo CD?
 
