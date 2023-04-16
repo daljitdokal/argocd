@@ -19,6 +19,9 @@ Argo CD is also trusted by various enterprises across all verticals. Companies l
 
 Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. Argo CD can pull updated code from Git repositories and deploy it directly to Kubernetes resources. It enables developers to manage both infrastructure configuration and application updates in one system.
 
+![Argo CD](https://user-images.githubusercontent.com/7479571/232259047-f34941a4-147d-4406-8a69-334f32057edb.png)
+
+
 ### How it works
 
 Argo CD follows the GitOps pattern of using Git repositories as the source of truth for defining the desired application state. Kubernetes manifests can be specified in several ways:
@@ -53,7 +56,7 @@ At a high level, the Argo CD process works like this:
 
   It is best to use separate Git repositories for Kubernetes manifests and application source code. Maintaining separation between source code and config repos makes them more manageable, enabling modification of one without affecting the other. Another reason to keep repos separate is to maintain cleaner logs for auditing purposes. Separate repos help reduce the noise from regular development activity and make it easier to trace the Git history. 
   
-  [!image](https://codefresh.io/wp-content/uploads/2022/03/word-image-20220330-174003.png)
+  ![Separate your Git repositories](https://codefresh.io/wp-content/uploads/2022/03/word-image-20220330-174003.png)
 
 - **Suitable Number of Deployment Configuration Repositories:**
 
@@ -68,6 +71,37 @@ At a high level, the Argo CD process works like this:
 - **Testing Manifests Before Each Commit:**
 
   Testing changes before pushing them to a manifest helps prevent the introduction of issues into pre-production. Typically, the agent uses a **Helm chart** or other template to generate the manifests. Engineers can run commands locally to test their manifests before they commit any changes. 
+
+- **Role-based access control for different clusters**
+
+   Create an ‘argocd’ folder in your configuration repository for each cluster and create an Argo CD Application manifest for each app in the cluster’s repository. By creating the separate ‘argocd’ folder, you can also implement role-based access control for different clusters if you wish with Git repository permissions.
+
+- **A different repository for every project**
+
+  Never put any independent applications or applications managed by different teams in the same repository. If the project is too large, you should definitely divide your repository. Otherwise, it gets hard to manage.
+  
+- **Group your applications**
+
+  Group your applications with `ApplicationSets`
+  
+  ![ApplicationSet](https://user-images.githubusercontent.com/7479571/232258712-771e0413-e4ec-48fb-9cef-e7ed636e26e5.png)
+
+- **Managing ten or fewer applications**
+
+  When managing ten or fewer applications, it’s best to use the `App of Apps` pattern. `App of App`s was the pioneer before `ApplicationSets` that allowed us to deploy multiple applications at once with ease.
+
+- **Externalizing your secrets from your Git repository**
+  
+  Secrets should not be on the Argo CD. It is not a safe solution. nstead of secret management on Argo CD, it could be good to use secret management tools like Haschicorp Vault.
+  [Argo CD Vault plugi](Argo CD Vault plugin): This solution creates debate about whether it’s GitOps or not. Nonetheless, it’s a solution using Kubernetes auth in Vault. The Argo CD repo server authorizes Vault to use the service account token in the secret manifest, substituting the required value and creating a secret for you
+
+- **Increase automation for your system with the other Argo projects**
+
+  Other Argo Projects:
+ 
+  - `Argo Rollouts`: Progressive delivery is a set of practices that roll out new features gradually instead of all at once. Argo Rollouts provide advanced deployment capabilities and rolling updates for progressive delivery approaches you might already know, such as blue-green, canary, etc.
+  - `Argo Workflows`: Workflows allow you to build and orchestrate parallel jobs and utilize a pipeline on Kubernetes.
+  - `Argo Events`: Events is an event-driven workflow automation framework that is used with Kubernetes.
 
 ### Steps:
 
